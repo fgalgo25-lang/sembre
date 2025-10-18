@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SEMBRÉ - De la Semilla al Fruto</title>
+  <style>
+    :root {
+      --azul-marino: #001b44;
+      --verde-telefonica: #00b140;
+      --gris-suave: #f4f7f5;
+      --texto: #0d1b1e;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--gris-suave);
+      color: var(--texto);
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(90deg, var(--azul-marino), var(--verde-telefonica));
+      color: white;
+      position: sticky;
+      top: 0;
+      padding: 0.8rem 0;
+      z-index: 10;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    header .container {
+      width: 90%;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+
+    .logo img {
+      height: 55px;
+      width: auto;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s, border-bottom 0.3s;
+      border-bottom: 2px solid transparent;
+    }
+
+    nav a:hover {
+      color: var(--verde-telefonica);
+      border-bottom: 2px solid var(--verde-telefonica);
+    }
+
+    .hero {
+      background: linear-gradient(rgba(0, 27, 68, 0.6), rgba(0, 177, 64, 0.6)), url('https://images.unsplash.com/photo-1501785888041-af3ef285b470');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-align: center;
+      padding: 9rem 1rem;
+    }
+
+    .hero h1 {
+      font-size: 3.4rem;
+      margin-bottom: 1rem;
+      color: var(--verde-telefonica);
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .section {
+      padding: 4rem 1rem;
+      width: 90%;
+      margin: auto;
+    }
+
+    .section h2 {
+      text-align: center;
+      color: var(--azul-marino);
+      margin-bottom: 2rem;
+      font-size: 2.1rem;
+      position: relative;
+    }
+
+    .section h2::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 4px;
+      background: var(--verde-telefonica);
+      margin: 0.6rem auto 0;
+      border-radius: 2px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.8rem;
+    }
+
+    .card {
+      background: white;
+      border-radius: 1rem;
+      padding: 2rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      border-left: 6px solid var(--verde-telefonica);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 6px 25px rgba(0, 177, 64, 0.25);
+    }
+
+    .stats {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      margin: 3rem 0;
+      text-align: center;
+    }
+
+    .stat {
+      background: var(--verde-telefonica);
+      color: white;
+      border-radius: 1rem;
+      padding: 1.2rem 2rem;
+      font-weight: bold;
+      box-shadow: 0 4px 12px rgba(0, 177, 64, 0.3);
+    }
+
+    .about p {
+      max-width: 800px;
+      margin: auto;
+      text-align: center;
+      font-size: 1.1rem;
+    }
+
+    .team {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .team p {
+      font-size: 0.95rem;
+      color: var(--azul-marino);
+    }
+
+    .contact form {
+      display: grid;
+      gap: 1rem;
+      max-width: 600px;
+      margin: auto;
+      background: white;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    input, textarea {
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+      border-radius: 0.5rem;
+      font-family: 'Segoe UI';
+    }
+
+    input:focus, textarea:focus {
+      border-color: var(--verde-telefonica);
+      outline: none;
+      box-shadow: 0 0 6px rgba(0, 177, 64, 0.3);
+    }
+
+    button {
+      background: var(--verde-telefonica);
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    button:hover {
+      background: var(--azul-marino);
+      transform: translateY(-2px);
+    }
+
+    footer {
+      background: linear-gradient(90deg, var(--azul-marino), var(--verde-telefonica));
+      color: white;
+      text-align: center;
+      padding: 1.5rem 0;
+      margin-top: 3rem;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="logo">
+        <img src="https://drive.google.com/uc?id=1SFNvrml63zM_GGhzgMywgNK-ISvoR5vC" alt="Logo Sembré">
+        <h1>SEMBRÉ</h1>
+      </div>
+      <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#educacion">Educación</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <section id="inicio" class="hero">
+    <h1>De la Semilla al Fruto 🌱</h1>
+    <p>Restauramos ecosistemas, promovemos la educación ambiental y construimos un futuro más verde.</p>
+  </section>
+
+  <section id="servicios" class="section">
+    <h2>Servicios</h2>
+    <div class="grid">
+      <div class="card"><h3>🌳 Reforestación de áreas</h3><p>Diseñamos e implementamos planes de reforestación en zonas degradadas, recuperando la biodiversidad.</p></div>
+      <div class="card"><h3>🌱 Siembra de árboles nativos</h3><p>Promovemos la plantación de especies locales que contribuyen a la conservación del ecosistema.</p></div>
+      <div class="card"><h3>🏞️ Restauración de ecosistemas</h3><p>Aplicamos técnicas ecológicas para devolver funcionalidad a ecosistemas dañados.</p></div>
+      <div class="card"><h3>💡 Asesoría ambiental</h3><p>Brindamos consultoría en gestión ambiental, mitigación de impactos y sostenibilidad.</p></div>
+      <div class="card"><h3>📊 Monitoreo de proyectos</h3><p>Evaluamos resultados de programas de reforestación mediante indicadores técnicos y sociales.</p></div>
+    </div>
+    <div class="stats">
+      <div class="stat">50,000+ árboles plantados</div>
+      <div class="stat">200+ hectáreas restauradas</div>
+      <div class="stat">30+ comunidades involucradas</div>
+    </div>
+  </section>
+
+  <section id="educacion" class="section">
+    <h2>Educación Ambiental</h2>
+    <div class="grid">
+      <div class="card"><h3>🌾 Talleres Escolares</h3><p>Programas para estudiantes sobre la importancia de la conservación ambiental.</p></div>
+      <div class="card"><h3>🏢 Capacitaciones Corporativas</h3><p>Entrenamientos para empresas que buscan incorporar prácticas sostenibles.</p></div>
+      <div class="card"><h3>🏡 Charlas Comunitarias</h3><p>Espacios de sensibilización ambiental para comunidades locales.</p></div>
+      <div class="card"><h3>🌍 Jornadas de Siembra</h3><p>Actividades participativas de plantación de árboles con enfoque educativo.</p></div>
+    </div>
+  </section>
+
+  <section id="nosotros" class="section">
+    <h2>Sobre Nosotros</h2>
+    <div class="about">
+      <p>En <strong>SEMBRÉ</strong> creemos en el poder de la naturaleza para regenerar la vida. Nuestra misión es reforestar y educar para restaurar los ecosistemas y fortalecer la conciencia ambiental.</p>
+    </div>
+    <div class="team">
+      <h3>Equipo</h3>
+      <p><strong>Felix Galgo</strong> — <small>Economía y Gestión Ambiental, Universidad Antonio Ruiz de Montoya</small></p>
+      <p><strong>Jhamel Hancco</strong> — <small>Ingeniería Industrial, Universidad Antonio Ruiz de Montoya</small></p>
+    </div>
+  </section>
+
+  <section id="contacto" class="section contact">
+    <h2>Contacto</h2>
+    <form>
+      <input type="text" placeholder="Nombre" required>
+      <input type="email" placeholder="Correo electrónico" required>
+      <textarea rows="4" placeholder="Mensaje"></textarea>
+      <button type="submit">Enviar mensaje</button>
+    </form>
+    <div style="text-align:center;margin-top:2rem">
+      <p>📞 927766033</p>
+      <p>📍 Jr. Castrovireyna 722, Breña, Lima</p>
+      <p>📧 fgalgo@unsa.edu.pe</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 SEMBRÉ — De la Semilla al Fruto 🌱</p>
+  </footer>
+</body>
+</html>
